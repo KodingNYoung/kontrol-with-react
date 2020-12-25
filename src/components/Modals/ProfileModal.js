@@ -52,12 +52,12 @@ const ProfileModal = ({ modalOpen, setModalOpen, modalCategory, user }) => {
   </header>
   <div className="input-fields-container">
     <div className="custom-field">
-      <input type="text" name="name" id="name" className="value-input" onChange={handleTextChange} value={newUser.job|| ''}  required/>
+      <input type="text" name="name" id="name" className="value-input" onChange={handleTextChange} value={newUser.name|| ''}  required/>
       <span className="placeholder">Name</span>
       <span className="border"></span>
     </div>
     <div className="custom-field">
-      <input type="text" name="job" id="job" className="value-input" required/>
+      <input type="text" name="job" id="job" className="value-input" onChange={handleTextChange} value={newUser.job|| ''} required/>
       <span className="placeholder">Job</span>
       <span className="border"></span>
     </div>
