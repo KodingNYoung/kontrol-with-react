@@ -1,0 +1,310 @@
+/* general modal styles and config */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0;
+}
+.modal.show {
+  opacity: 1;
+  transition: opacity 0s ease;
+}
+.modal.close {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0s ease .3s;
+}
+.modal .scrim {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal .modal-content {
+  background-color: #fff;
+  position: relative;
+  z-index: 7;
+  min-width: 300px;
+  width: 70%;
+  max-width: 500px;
+  max-height: 100vh;
+  border-radius: 7px;
+  transform: scale(0);
+}
+.modal.show .modal-content {
+  animation: openUp .3s ease .1s forwards;
+}
+.modal.close .modal-content {
+  animation: closeDown .3s ease forwards;
+}
+
+/* FOR THE ADD AND EDIT MODAL */
+/* the inmage input area */
+.add-edit-project-form .image-input-area {
+  height: 170px;
+  max-height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right bottom, #FFFFFF5D, #6dd4fa5d, #446df65d);
+  border-radius: 7px 7px 0 0;
+  position: relative;
+}
+/* the preview of the input */
+.image-input-area img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  border-radius: 7px 7px 0 0;
+  top: 0;
+  left: 0;
+}
+/* the image input icon */
+.image-input-area .icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 2.5rem;
+}
+/* for the image input in the modal */
+.image-input-area input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+}
+/* the header for each modal */
+.add-edit-project-form header, .delete-project-modal header  {
+  font-family: 'Roboto condensed', sans-serif;
+  color: var(--primary-color);
+  text-transform: capitalize;
+  padding: 20px;
+}
+/* the input field container */
+.add-edit-project-form .input-fields-container {
+  overflow-y: auto;
+  max-height:50vh;
+  padding: 0 20px 20px;
+}
+
+/* input containers */
+.add-edit-project-form .custom-field {
+  position: relative;
+  font-size: 1rem;
+  padding-top: 20px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+/* icon */
+.custom-field .icon {
+  padding: 15px 10px;
+  border-radius: 5px 0 0 0;
+  font-size: 1rem;
+}
+/* inputs */
+.custom-field .value-input {
+  border:none;
+  appearance: none;
+  padding: 15px 5px;
+  border-radius: 0 5px 0 0 ;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* placeholder */
+.custom-field .placeholder {
+  position: absolute;
+  left: 40px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: var(--dark-color);
+  transition: 
+    top .3s ease, 
+    left .3s ease, 
+    font-size .3s ease, 
+    color .3s ease;
+  pointer-events: none;
+}
+
+/* placeholder :when the input is focused or valid*/
+.custom-field .value-input:focus + .placeholder,
+.custom-field .value-input:valid + .placeholder {
+  font-size: .8rem;
+  top: 10px;
+  left: 10px;
+  color: var(--primary-color);
+}
+
+/* the border */
+.custom-field .border {
+  width: 100%;
+  height: calc(100% - 20px);
+  position: absolute;
+  top: 20px;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  pointer-events: none;
+  border: 1px solid;
+  transition: border-width .3s ease, border-color .3s ease;
+}
+/* border :when the input is focused or valid */
+.custom-field .value-input:focus ~ .border,
+.custom-field .value-input:valid ~ .border { 
+  border-width: 2px;
+  border-color: var(--primary-color);
+}
+@media screen and (min-width: 540px) {
+  /* the links row */
+  .links-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    margin: 10px;
+  }
+  .add-edit-project-form .links-row .custom-field {
+    margin: 0;
+  }
+}
+
+/* footer */
+.add-edit-project-form footer, .delete-project-modal footer {
+  padding: 10px 20px;
+  text-align: right;
+}
+footer button {
+  padding: 10px 8px;
+  margin-left: 10px;
+  color: var(--primary-color);
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  min-width: 70px;
+}
+footer button:hover {
+  background-color: #f2f2f2;
+}
+footer button:disabled {
+  color: #ccc;
+}
+
+/* delete modal specific styles */
+.delete-project-modal .delete-modal-body{
+  padding: 10px 20px;
+}
+.delete-modal-body .project-name {
+  font-family: 'Roboto mono', monospace;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+/* end of delete modal styles */
+
+/* message modal */
+.message-modal .modal-content {
+  padding: 15px;
+  font-family: 'Roboto condensed', sans-serif;
+}
+.message-modal h2, 
+.message-modal h5, 
+.message-modal small {
+  margin: 5px 0;
+}
+.message-modal h5, 
+.message-modal small {
+  color: #0c1618b0;
+}
+.message-modal p {
+  margin: 30px 0;
+  font-family: 'Roboto', sans-serif;
+}
+.message-modal footer {
+  text-align: right;
+}
+
+/* profile */
+/* the input */
+.profile-modal .custom-field .value-input {
+  padding: 15px;
+}
+/* the file input */
+.profile-modal .custom-field .file-input{
+  position: relative;
+  cursor: pointer;
+  color: transparent;
+}
+.profile-modal .custom-field .file-input::before {
+  content: 'Upload file';
+  position: absolute;
+  right: 0;
+  background-color: var(--dark-color);
+  color: #fff;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  min-width: 90px;
+  max-width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px;
+}
+.profile-modal .custom-field .file-input:valid::before {
+  background-color: var(--primary-color);
+}
+.profile-modal .custom-field .file-input:valid{
+  color: var(--dark-color);
+}
+
+.profile-modal .custom-field .file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* placeholder */
+.profile-modal .custom-field .placeholder {
+  left: 20px;
+}
+
+
+/* animations */
+@keyframes openUp {
+  0% {
+    transform: scale(0);
+  }
+  20%{
+    transform: scale(1);
+  }
+  60%{
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes closeDown {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

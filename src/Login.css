@@ -1,0 +1,21 @@
+.login {
+  background: linear-gradient(to bottom,#446df6, #446df6);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login form input,
+.login form button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+}

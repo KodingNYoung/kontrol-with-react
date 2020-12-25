@@ -1,0 +1,71 @@
+.card {
+  border-radius: 5px;
+  box-shadow: 0 3px 5px #cccccc;
+}
+.project-card .main-content {
+  position: relative;
+}
+.main-content .title {
+  padding: 5px 10px 3px;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  color: var(--dark-color);
+  font-family: 'Roboto condensed', sans-serif;
+}
+.main-content .stack {
+  padding: 2px 10px;
+  font-family: 'Roboto mono', monospace;
+  color: #0c1618c5;
+  font-size: .95rem;
+}
+.main-content img {
+  width: 100%;
+}
+.main-content .description {
+  padding: 2px 10px;
+  color: #0c1618c5;
+  font-family: 'Roboto', sans-serif;
+}
+.main-content .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fffffff3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.main-content:hover .overlay {
+  display: flex;
+}
+.overlay button {
+  background-color: transparent;
+  font-size: 2.3rem;
+  color: #4771fcc5;
+  border: none;
+  outline:none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+}
+
+.overlay button.delete:hover {
+  color: #f0423c;
+}
+.overlay button.edit:hover {
+  color: var(--primary-color)
+}
+
+.project-card footer {
+  text-align: right;
+  padding: 10px;
+  margin-top:5px;
+  font-size: 1.2rem;
+}
+.project-card footer a {
+  padding: 0 5px;
+  color: var(--primary-color);
+}

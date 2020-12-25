@@ -1,0 +1,30 @@
+@keyframes spinner {
+  0% { transform: translate(-50%,-50%) rotate(0deg); }
+  100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.preloader {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ldio-a84914bx1x div {
+  position: absolute;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+.loadingio-spinner-rolling-51lh98h3ckv {
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff00;
+}
+.ldio-a84914bx1x {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-a84914bx1x div { box-sizing: content-box; }
