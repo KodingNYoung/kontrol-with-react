@@ -4,5 +4,4 @@
   left: 0;
   height: 5px;
   background-color: var(--primary-color);
-  transition: width .3s ease;
 }

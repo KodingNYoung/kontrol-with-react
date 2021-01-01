@@ -1,21 +1,94 @@
 .login {
-  background: linear-gradient(to bottom,#446df6, #446df6);
   height: 100vh;
+  max-height: 100vh;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+.login .login-topbar {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.login-topbar a {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+.login-topbar a:hover {
+  border-color: #fff;
+}
+.login-topbar a span {
+  padding-right: 0.4rem;
+}
+.login .login-card {
+  display: flex;
   justify-content: center;
   align-items: center;
+  height: 92vh;
+}
+.login-card .card {
+  padding: 1.3rem;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+}
+.login-card header {
+  padding-bottom: 20px;
+  font-family: "Roboto condensed", sans-serif;
+  color: var(--primary-color);
+}
+.login-card .card-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+}
+.login-card svg {
+  width: 100%;
+  height: 100%;
+}
+.login-card .login-form {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.login-card .login-btn {
+  width: calc(100% - 20px);
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.login-form .login-btn:hover {
+  background-color: #f1f1f1;
+  color: var(--primary-color);
 }
 
-.login form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.login-form .login-btn:disabled {
+  background-color: #f1f1f1;
+  color: #ccc;
+  border-color: transparent;
 }
-.login form input,
-.login form button {
-  width: 100%;
-  padding: 10px;
-  margin: 5px;
+@media screen and (max-width: 600px) {
+  .login-card .card-content {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: , auto; */
+    row-gap: 1rem;
+    justify-items: center;
+  }
+  .login-card .login-svg {
+    max-width: 250px;
+  }
 }

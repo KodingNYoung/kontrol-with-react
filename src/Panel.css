@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&family=Langar&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&family=Langar&display=swap");
 :root {
   --primary-color: #446df6;
   --dark-color: #0c1618;
@@ -37,7 +37,7 @@ body {
   max-width: 100%;
 }
 
-@media screen and (max-width: 780px) and (min-width: 540px){
+@media screen and (max-width: 780px) and (min-width: 540px) {
   .Panel {
     grid-template-columns: 100px calc(100% - 100px);
   }
@@ -54,7 +54,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .drawer-scrim .side-drawer {
     transform: translateX(-100%);
@@ -69,17 +69,17 @@ body {
 
 /* views */
 /* dashboard */
-main.dashboard {
+section.dashboard-cards {
   padding: 25px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   gap: 20px;
 }
-main.dashboard .card {
+section.dashboard-cards .card {
   height: 100%;
 }
-main.dashboard .content-container {
+section.dashboard-cards .dashboard-card-column {
   padding: 15px;
   position: relative;
   display: grid;
@@ -87,10 +87,10 @@ main.dashboard .content-container {
   padding-bottom: 75px;
   height: 100%;
 }
-main.dashboard .user-info {
-  font-family: 'Roboto condensed', sans-serif;
+section.dashboard-cards .user-info {
+  font-family: "Roboto condensed", sans-serif;
 }
-main.dashboard .user-info .avatar {
+section.dashboard-cards .user-info .avatar {
   width: 35vw;
   height: 35vw;
   max-width: 230px;
@@ -107,58 +107,58 @@ main.dashboard .user-info .avatar {
   object-fit: contain;
 }
 
-main.dashboard .user-info .job,
-main.dashboard label {
-  font-size: .95rem;
+section.dashboard-cards .user-info .job,
+section.dashboard-cards label {
+  font-size: 0.95rem;
   color: #0c1618b0;
 }
-main.dashboard .user-info .item-numbers {
+section.dashboard-cards .user-info .item-numbers {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 5px 0;
 }
-main.dashboard .item{
+section.dashboard-cards .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px  10px;
+  margin: 5px 10px;
 }
-main.dashboard .item label {
+section.dashboard-cards .item label {
   text-transform: capitalize;
 }
-main.dashboard .item .value {
+section.dashboard-cards .item .value {
   font-size: 1rem;
-  font-weight:700;
+  font-weight: 700;
 }
-main.dashboard .user-info a.resume{
+section.dashboard-cards .user-info a.resume {
   display: block;
   margin: 20px 0;
   color: var(--primary-color);
   text-decoration: none;
   border-bottom: 2px solid transparent;
 }
-main.dashboard .user-info a.resume:hover {
+section.dashboard-cards .user-info a.resume:hover {
   border-color: var(--primary-color);
 }
 
-/* about section/card */
-main.dashboard .about-me p,
-main.dashboard .badge{
+/* about section/card  */
+section.dashboard-cards .about-me p,
+section.dashboard-cards .badge {
   padding: 10px 0;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-/* skill section/card */
-main.dashboard .badges-container{
+/* skill section/card  */
+section.dashboard-cards .badges-container {
   justify-self: start;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 5px 0;
 }
-main.dashboard .badges-container .badge{
+section.dashboard-cards .badges-container .badge {
   display: block;
   padding: 5px 10px;
   margin: 4px;
@@ -167,11 +167,11 @@ main.dashboard .badges-container .badge{
   border-radius: 3px;
 }
 
-/* dashboard general styes*/
-main.dashboard h2{
-  font-family: 'Roboto condensed', sans-serif;
+/* dashboard general styes */
+section.dashboard-cards h2 {
+  font-family: "Roboto condensed", sans-serif;
 }
-main.dashboard .edit-btn{
+section.dashboard-cards .edit-btn {
   position: absolute;
   bottom: 15px;
   background-color: transparent;
@@ -190,15 +190,15 @@ main.dashboard .edit-btn{
   display: none;
 }
 
-main.dashboard .edit-btn:hover {
+section.dashboard-cards .edit-btn:hover {
   background-color: #f1f1f1;
 }
-main.dashboard .content-container:hover .edit-btn {
+section.dashboard-cards .dashboard-card-column:hover .edit-btn {
   display: flex;
 }
 
 @media screen and (max-width: 970px) {
-  main.dashboard {
+  section.dashboard-cards {
     grid-template-columns: 1fr;
   }
 }
@@ -223,7 +223,7 @@ main.projects .add-project-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  cursor:pointer;
+  cursor: pointer;
   box-shadow: 2px 3px 5px #999;
   font-size: 1.2rem;
 }
@@ -234,7 +234,7 @@ main.message-view {
 }
 main.message-view .message-tab-btns {
   display: flex;
-  flex-wrap:nowrap;
+  flex-wrap: nowrap;
   overflow-x: auto;
   border-bottom: 1px solid #e2e2e2;
 }
@@ -243,8 +243,8 @@ main.message-view .message-tab-btns {
   min-width: 130px;
   background-color: #fff;
   padding: 20px;
-  color:  #446df68f;
-  font-family: 'Roboto', sans-serif;
+  color: #446df68f;
+  font-family: "Roboto", sans-serif;
   text-transform: capitalize;
   font-size: 1.3rem;
   font-weight: 100;
@@ -254,27 +254,27 @@ main.message-view .message-tab-btns {
   justify-content: center;
   cursor: pointer;
   text-decoration: none;
-  transition: border-color .5s ease;
+  transition: border-color 0.5s ease;
 }
 .message-tab-btns .tab-btn.active {
-  transition: border-color .5s ease;
+  transition: border-color 0.5s ease;
   font-weight: 500;
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
-.message-tab-btns .tab-btn:hover{
+.message-tab-btns .tab-btn:hover {
   background-color: #f2f2f2;
 }
 .tab-btn span {
   font-size: 1rem;
   color: var(--primary-color);
-  padding:0 10px;
+  padding: 0 10px;
 }
-.tab-btn .badge{
+.tab-btn .badge {
   background-color: var(--primary-color);
   color: #fff;
   margin-left: 5px;
-  border-radius: 20px; 
+  border-radius: 20px;
   padding: 2px 10px;
 }
 
@@ -297,8 +297,7 @@ main.message-view .message-body {
   border-radius: 5px;
   cursor: pointer;
   border: 2px solid transparent;
-  font-family: 'Roboto condensed', sans-serif;
-  
+  font-family: "Roboto condensed", sans-serif;
 }
 .message-list .message-item:hover {
   border-color: var(--primary-color);
@@ -306,18 +305,18 @@ main.message-view .message-body {
 }
 .message-item .sender-email {
   color: #0c1618b0;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 .message-item .message {
   width: 100%;
   margin-top: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .message-item.unread .message {
   font-weight: 700;
 }
 .message-item .right {
-  font-size: .9rem;
+  font-size: 0.9rem;
   width: 20%;
   color: #0c1618b0;
   text-align: right;
@@ -329,12 +328,12 @@ main.message-view .message-body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color:var(--dark-color);
-  text-align:center;
+  color: var(--dark-color);
+  text-align: center;
 }
 .error h1 {
   font-size: 3.5rem;
-  font-family: 'Roboto condensed', sans-serif;
+  font-family: "Roboto condensed", sans-serif;
 }
 .error span {
   font-size: 1.5rem;

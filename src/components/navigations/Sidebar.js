@@ -6,16 +6,14 @@ import { useLocation } from 'react-router-dom';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faCode } from '@fortawesome/free-solid-svg-icons';
 
+import Logo from '../Logo/Logo';
+
 // css
 import './Sidebar.css'
 
 // components
 import NavLink from '../Links/NavLink';
-const Logo = () => {
-  return (
-    <h1>Logo</h1>
-  )
-}
+
 const NavLinks = ({ activeRoute, onLinkClick }) => {
   const routes = [
     { name:'dashboard', route: 'dashboard', icon:faUser },

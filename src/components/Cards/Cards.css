@@ -2,6 +2,9 @@
   border-radius: 5px;
   box-shadow: 0 3px 5px #cccccc;
 }
+.card.project-card {
+  max-width: 400px;
+}
 .project-card .main-content {
   position: relative;
 }

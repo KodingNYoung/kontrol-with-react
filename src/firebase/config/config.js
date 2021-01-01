@@ -4,15 +4,14 @@ import 'firebase/storage';
 import 'firebase/auth'
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyAd4qHx0KBWaF_HhTwu4p2rItWKuiPn0DM",
-  authDomain: "portfolio-5cc31.firebaseapp.com",
-  databaseURL: "https://portfolio-5cc31.firebaseio.com",
-  projectId: "portfolio-5cc31",
-  storageBucket: "portfolio-5cc31.appspot.com",
-  messagingSenderId: "416876812139",
-  appId: "1:416876812139:web:2e82b50691d15001105e2e"
-};
+  var firebaseConfig = {
+    apiKey: "AIzaSyCDIdZCaycypbZDKUZnvUpy_FkUMGrmU8o",
+    authDomain: "kontrol-panel-a6251.firebaseapp.com",
+    projectId: "kontrol-panel-a6251",
+    storageBucket: "kontrol-panel-a6251.appspot.com",
+    messagingSenderId: "88684263688",
+    appId: "1:88684263688:web:95d8493d9fbca9bdce54bd"
+  };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 

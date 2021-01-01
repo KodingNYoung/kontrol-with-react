@@ -1,0 +1,7 @@
+h1.logo {
+  color: #fff;
+  font-family: "Langar", cursive;
+  padding: 0 20px;
+  user-select: none;
+  font-size: 1.3rem;
+}

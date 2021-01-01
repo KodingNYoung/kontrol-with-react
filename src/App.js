@@ -1,10 +1,11 @@
-import React from 'react'
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
 
-import { AuthProvider } from './contexts/AuthContext';
+import { AuthProvider } from "./contexts/AuthContext";
 
-import Login from './Login';
-import Panel from './Panel';
+import Login from "./Login";
+import Panel from "./Panel";
 
 const App = () => {
   return (
@@ -12,11 +13,11 @@ const App = () => {
       <AuthProvider>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route path="/dashboard" component={Panel} />
+          <PrivateRoute path="/dashboard" component={Panel} />
         </Switch>
       </AuthProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

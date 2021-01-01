@@ -16,7 +16,6 @@
   background-color: transparent;
   border: none;
   outline: none;
-  
 }
 .top-bar .burger:hover {
   background-color: #f1f1f1;
@@ -34,12 +33,12 @@
   display: flex;
   align-items: center;
   margin-left: auto;
-  position:relative;
+  position: relative;
 }
-.top-bar .user-detail .details{
+.top-bar .user-detail .details {
   display: flex;
   align-items: center;
-  font-family: 'Roboto condensed', sans-serif;
+  font-family: "Roboto condensed", sans-serif;
   background-color: transparent;
   border: 0;
   outline: 0;
@@ -61,39 +60,53 @@
 .user-detail .user-info {
   font-size: 1rem;
   text-align: left;
-  padding-left: .4rem;
+  padding-right: 0.4rem;
 }
 .user-info .email {
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: #446df6c5;
 }
-.user-detail .logout-btn {
+.user-detail .dropdown-menu {
   position: absolute;
-  left: 0;
-  top: 50%;
-  width: 50%;
+  right: 0;
+  top: 110%;
+  /* width: fit%; */
+  width: 100%;
+  box-shadow: 0px 3px 5px #ccc;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease, max-height 0.3s ease;
+  z-index: 1;
+  overflow-y: hidden;
+  max-height: 0;
+  background-color: #fff;
+}
+.dropdown-menu.visible {
+  max-height: 300px;
+  opacity: 1;
+}
+.dropdown-menu .dropdown-item {
+  padding: 5px;
+}
+.user-detail .dropdown-btn {
   display: flex;
   justify-content: flex-start;
-  align-self: center;
+  align-items: center;
   padding: 10px;
-  text-transform: capitalize;
-  background-color: #fff;
   border: none;
   outline: none;
-  box-shadow: 0px 3px 5px #ccc;
   cursor: pointer;
+  width: 100%;
   border-radius: 5px;
-  pointer-events: none;
-  opacity: 0;
-  transition: top .3s ease, opacity .3s ease;
+  background-color: transparent;
+  font-family: "Roboto condensed", sans-serif;
 }
-.logout-btn.visible {
-  top: 110%;
-  opacity: 1;
-  pointer-events: all;
+.dropdown-btn span {
+  padding-left: 0.5rem;
 }
-.logout-btn span {
-  padding-left: .5rem;
+.dropdown-btn:hover {
+  background-color: #f1f1f1;
+  font-weight: 500;
 }
 @media screen and (max-width: 540px) {
   .top-bar .burger {

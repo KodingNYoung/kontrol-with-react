@@ -12,8 +12,8 @@ const ProjectCard = ({ openEditModal, openDeleteModal, project }) => {
   const { id, project: { description, githubRepoLink, liveWebsiteLink, stacks, title }, url } = project;
 
   return (
-    <Card>
-      <div className="project-card" id={id}>
+    <Card classname="project-card" id={id}>
+      {/* <div className="project-card" id={id}> */}
         <div className="main-content">
           <header className="title">{title}</header>
           <p className="stack">{stacks}</p>
@@ -36,7 +36,7 @@ const ProjectCard = ({ openEditModal, openDeleteModal, project }) => {
               <FontAwesomeIcon icon={faEye} />
             </a>
         </footer>
-      </div>
+      {/* </div> */}
     </Card>
   )
 }

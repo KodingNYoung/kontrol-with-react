@@ -1,38 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import useFireStoreToGetDatum from "../../firebase/hooks/useFirestoreToGetDatum";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
+import "./Topbar.css";
 
-import './Topbar.css'
-import avatar from '../../img/avatar.png'
+const UserDetail = ({
+  onLogoutBtnClick,
+  dropdownOpen,
+  setDropdownOpen,
+  currentUser,
+}) => {
+  const { doc } = useFireStoreToGetDatum("dashboard", "anybody@anywhere.com");
+  const [userData, setUserData] = useState({});
 
-const UserDetail = ({ onLogoutBtnClick, logoutBtnEnable, setLogoutBtnEnable }) => {
-  const [logoutBtnClassname, setLogoutBtnClassname] =useState('logout-btn')
-  
+  const [dropdownClassname, setDropdownClassname] = useState("logout-btn");
+
   useEffect(() => {
-    setLogoutBtnClassname(logoutBtnEnable ? 'logout-btn visible' : 'logout-btn');
-  }, [logoutBtnEnable])
+    if (doc.contact !== undefined) {
+      setUserData(doc);
+    }
+    setDropdownClassname(dropdownOpen ? "visible" : "");
+  }, [dropdownOpen, doc]);
 
-  const toggleBtnEnable = () => {
-    setLogoutBtnEnable(!logoutBtnEnable);
-  }
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   return (
     <div className="user-detail">
-      <button onClick={toggleBtnEnable} className="details">
-        <div className="avatar">
-          <img src={avatar} alt="avatar"/>
-        </div>
-        <FontAwesomeIcon icon={faCaretDown}/>
-        <div className="user-info">
-          <p className="name">KodingNYoung</p>
-          <p className="email">abiodunadebambo44@gmail.com</p>
-        </div>
-      </button>
-      <LogoutBtn onClick={onLogoutBtnClick} className={logoutBtnClassname}/>
+      {userData.contact ? (
+        <button onClick={toggleDropdown} className="details">
+          <div className="user-info">
+            <p className="name">{userData.name}</p>
+            <p className="email">{currentUser.email}</p>
+          </div>
+          <FontAwesomeIcon icon={faCaretDown} />
+        </button>
+      ) : null}
+      <DropdownMenu
+        onLogout={onLogoutBtnClick}
+        className={dropdownClassname}
+        currentUser={currentUser}
+      />
     </div>
-  )
-}
+  );
+};
 const Burger = ({ onClick }) => {
   return (
     <button className="burger" onClick={onClick}>
@@ -40,28 +54,40 @@ const Burger = ({ onClick }) => {
       <div className="line"></div>
       <div className="line"></div>
     </button>
-  )
-} 
-const LogoutBtn = ({ onClick, className }) => {
+  );
+};
+
+const DropdownMenu = ({ className, onLogout }) => {
   return (
-    <button onClick={onClick} className={className}>
-      <FontAwesomeIcon icon={faSignOutAlt}/>
-      <span>logout</span>
-    </button>
-  )
-}
-const Topbar = ({ onBurgerClick, onLogoutBtnClick, logoutBtnEnable, setLogoutBtnEnable }) => {
-  
+    <div className={`dropdown-menu ${className}`}>
+      <div className="dropdown-item">
+        <button onClick={onLogout} className="logout-btn dropdown-btn">
+          <FontAwesomeIcon icon={faSignOutAlt} />
+          <span>Logout</span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const Topbar = ({
+  onBurgerClick,
+  onLogoutBtnClick,
+  dropdownOpen,
+  setDropdownOpen,
+  currentUser,
+}) => {
   return (
     <div className="top-bar">
       <Burger onClick={onBurgerClick} />
-      <UserDetail 
-      onLogoutBtnClick={onLogoutBtnClick}
-      logoutBtnEnable={logoutBtnEnable}
-      setLogoutBtnEnable={setLogoutBtnEnable}
+      <UserDetail
+        onLogoutBtnClick={onLogoutBtnClick}
+        dropdownOpen={dropdownOpen}
+        setDropdownOpen={setDropdownOpen}
+        currentUser={currentUser}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Topbar
+export default Topbar;
