@@ -11,11 +11,8 @@ import "./Login.css";
 
 import { ReactComponent as LoginSVG } from "./img/login.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faLock,
-  faSignOutAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+
 import Logo from "./components/Logo/Logo";
 const Login = () => {
   const emailRef = useRef();
@@ -47,10 +44,6 @@ const Login = () => {
     <main className="login">
       <div className="login-topbar">
         <Logo />
-        <a href="https://kodingnyoung.herokuapp.com/">
-          <span>Go to main site</span>
-          <FontAwesomeIcon icon={faSignOutAlt} />
-        </a>
       </div>
 
       <section className="login-card">
