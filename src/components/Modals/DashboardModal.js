@@ -17,7 +17,14 @@ const DashboardModal = ({
     name: "",
     job: "",
     about: "",
-    contact: { email: "", phone: "", location: "" },
+    contact: {
+      email: "",
+      phone: "",
+      location: "",
+      github_handle: "",
+      twitter_handle: "",
+      linkedin_id: "",
+    },
     skills: { soft: "", tech: "" },
   });
   const [resume, setResume] = useState(null);
@@ -45,14 +52,28 @@ const DashboardModal = ({
       name: "",
       job: "",
       about: "",
-      contact: { email: "", phone: "", location: "" },
+      contact: {
+        email: "",
+        phone: "",
+        location: "",
+        github_handle: "",
+        twitter_handle: "",
+        linkedin_id: "",
+      },
       skills: { soft: "", tech: "" },
     });
   };
   const handleTextChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "email" || name === "phone" || name === "location") {
+    if (
+      name === "email" ||
+      name === "phone" ||
+      name === "location" ||
+      name === "github_handle" ||
+      name === "linkedin_id" ||
+      name === "twitter_handle"
+    ) {
       return setUser({ ...user, contact: { ...user.contact, [name]: value } });
     }
     if (name === "soft" || name === "tech") {
@@ -126,7 +147,6 @@ const DashboardModal = ({
             className="value-input"
             value={user.contact.email}
             onChange={handleTextChange}
-            required
           />
           <div className="placeholder">Email</div>
           <div className="border"></div>
@@ -138,7 +158,6 @@ const DashboardModal = ({
             className="value-input"
             value={user.contact.phone}
             onChange={handleTextChange}
-            required
           />
           <div className="placeholder">Phone</div>
           <div className="border"></div>
@@ -150,9 +169,41 @@ const DashboardModal = ({
             className="value-input"
             value={user.contact.location}
             onChange={handleTextChange}
-            required
           />
           <div className="placeholder">Location</div>
+          <div className="border"></div>
+        </div>
+        <div className="custom-field">
+          <input
+            type="text"
+            name="github_handle"
+            className="value-input"
+            value={user.contact.github_handle}
+            onChange={handleTextChange}
+          />
+          <div className="placeholder">Github handle</div>
+          <div className="border"></div>
+        </div>
+        <div className="custom-field">
+          <input
+            type="text"
+            name="twitter_handle"
+            className="value-input"
+            value={user.contact.twitter_handle}
+            onChange={handleTextChange}
+          />
+          <div className="placeholder">Twitter handle</div>
+          <div className="border"></div>
+        </div>
+        <div className="custom-field">
+          <input
+            type="text"
+            name="linkedin_id"
+            className="value-input"
+            value={user.contact.linkedin_id}
+            onChange={handleTextChange}
+          />
+          <div className="placeholder">Linkedin ID</div>
           <div className="border"></div>
         </div>
         <div className="custom-field">

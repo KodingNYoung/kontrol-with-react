@@ -36,7 +36,7 @@
   min-width: 300px;
   width: 70%;
   max-width: 500px;
-  max-height: 85vh;
+  max-height: 95vh;
   border-radius: 7px;
   transform: scale(0);
 }
@@ -48,10 +48,10 @@
 }
 
 /* FOR THE ADD AND EDIT MODAL */
-/* the inmage input area */
+/* the image input area */
 .add-edit-project-form .image-input-area {
   height: 170px;
-  max-height: 20vh;
+  max-height: 25%;
   width: 100%;
   background: linear-gradient(to right bottom, #ffffff5d, #6dd4fa5d, #446df65d);
   border-radius: 7px 7px 0 0;
@@ -247,7 +247,7 @@ footer button:disabled {
   margin: 30px 0;
   font-family: "Roboto", sans-serif;
 }
-.message-modal footer{
+.message-modal footer {
   padding: 0;
 }
 /* profile */
