@@ -59,7 +59,15 @@ const Dashboard = () => {
   const makeElementArray = (detailObject) => {
     const array = [];
     for (const key in detailObject) {
-      array.push(<Item label={key} value={detailObject[key]} key={key} />);
+      if (detailObject[key] !== "") {
+        array.push(
+          <Item
+            label={key.replace("_", " ")}
+            value={detailObject[key]}
+            key={key}
+          />
+        );
+      }
     }
     return array;
   };
