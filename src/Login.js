@@ -22,7 +22,7 @@ const Login = () => {
   const { login } = useAuthContext();
   const history = useHistory();
 
-  const handleUserLogin = async (e) => {
+  const handleUserLogin = async e => {
     e.preventDefault();
 
     // set error to null
@@ -34,7 +34,7 @@ const Login = () => {
         setLoading(false);
         setTimeout(() => history.push("/dashboard"), 100);
       })
-      .catch((err) => {
+      .catch(err => {
         setError(`Failed to log in because ${err.message}`);
         setLoading(false);
       });
@@ -60,7 +60,14 @@ const Login = () => {
               autoComplete="on"
               className="form login-form"
             >
-              {error && <p>{error}</p>}
+              {error && (
+                <>
+                  <p>{error}</p>
+                  You can login with:
+                  <p>Email: anybody@anywhere.com </p>
+                  <p>Password: secretiveasf </p>
+                </>
+              )}
               <div className="custom-field">
                 <label htmlFor="email" className="icon">
                   <FontAwesomeIcon icon={faEnvelope} />
